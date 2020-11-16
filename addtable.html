@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>テーブル追加</title>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+      var idx = 3;
+
+      //テーブル追加
+      $('#btn1').click(function(event){
+        $('#tbl1').append('<tr><td>' + (++idx) + '</td><td>xx</td><td>xx</td></tr>');
+      });
+ 
+      $('#tbl1').on("click", "tr", function(event){
+        $(this).remove();
+      });
+});
+</script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <input type="button" id="btn1" value="行追加">
+        </div>
+        <div class="row">
+            <table id="tbl1">
+                <tr><td>1</td><td>aa</td><td>１つ目</td></tr>
+                <tr><td>2</td><td>bb</td><td>２つ目</td></tr>
+                <tr><td>3</td><td>cc</td><td>３つ目</td></tr>
+             </table>          
+        </div>
+    </div>
+</body>
+
+</html>
