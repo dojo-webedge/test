@@ -12,7 +12,7 @@ https://dojo-webedge.github.io/test/testhtml.
 でテスト用のページを公開しています。
 
 jQuery リファレンス
-http://semooh.jp/jquery/
+http://semooh.jp/jquery/ <br>
 ↑かなり古いですが、導入として役に立つと思います。
 
 https://jquery.com/
