@@ -6,10 +6,9 @@
 
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $(function(){
-      var idx = 3;
 
       // ## Case1: ボタンを押すと↓の2次元配列の分、テーブルの行が追加されるようにしてください。
       var data1 = [
@@ -26,11 +25,38 @@ $(function(){
       ];
 
       //テーブル追加
+      var idx = 3;
+
       $('#btn1').click(function(event){
         $('#tbl1').append('<tr><td>' + (++idx) + '</td><td>xx</td><td>xx</td></tr>');
       });
  
       $('#tbl1').on("click", "tr", function(event){
+        $(this).remove();
+      });
+
+      // ## Case1
+      var caseidx1 = 3;
+
+      $('#btn2').click(function(event){
+        data1.forEach(function(value){
+          $('#tbl2').append('<tr><td>' + (value[0]) + '</td><td>' + (value[1]) + '</td><td>' + (value[2]) + '</td></tr>');
+        });
+      });
+ 
+      $('#tbl2').on("click", "tr", function(event){
+        $(this).remove();
+      });
+
+      // ## Case2
+      var caseidx2 = 3;
+      $('#btn3').click(function(event){
+        data2.forEach(function(value){
+          $('#tbl3').append('<tr><td>' + (value.no) + '</td><td>' + (value.name) + '</td><td>' + (value.date) + '</td></tr>');
+        });
+      });
+ 
+      $('#tbl3').on("click", "tr", function(event){
         $(this).remove();
       });
 });
@@ -40,15 +66,33 @@ $(function(){
 
 <body>
     <div class="container">
+      
         <div class="row">
             <input type="button" id="btn1" value="行追加">
+            <input type="button" id="btn2" value="Case1">
+            <input type="button" id="btn3" value="Case2">
         </div>
+
         <div class="row">
             <table id="tbl1">
                 <tr><td>1</td><td>aa</td><td>１つ目</td></tr>
                 <tr><td>2</td><td>bb</td><td>２つ目</td></tr>
                 <tr><td>3</td><td>cc</td><td>３つ目</td></tr>
-             </table>          
+             </table>
+        </div>
+        <div class="row">
+          <table id="tbl2">
+            <tr><td>1</td><td>aa</td><td>１つ目</td></tr>
+            <tr><td>2</td><td>bb</td><td>２つ目</td></tr>
+            <tr><td>3</td><td>cc</td><td>３つ目</td></tr>
+         </table>
+        </div>
+        <div class="row">
+          <table id="tbl3">
+            <tr><td>1</td><td>aa</td><td>１つ目</td></tr>
+            <tr><td>2</td><td>bb</td><td>２つ目</td></tr>
+            <tr><td>3</td><td>cc</td><td>３つ目</td></tr>
+         </table>       
         </div>
     </div>
 </body>
