@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="main.js"></script>
     <title>temple</title>
 
     <script>
@@ -22,14 +21,13 @@
               return false;
             });
 
-            $('.test').on('click', function(){
-             var hiddenVal = $(this).children('td')[0].innerText;
-             var nameVal = $(this).children('td')[1].innerText;
-             var test3 = $(this).children('td')[2].innerText;
-             document.form.textarea1.value = hiddenVal + ' '+ nameVal + ' '+ test3;
+           $('td').on('click', function(){
+             var hiddenVal = $(this).children()[0].innerText;
+             
+             document.form.textarea1.value = hiddenVal;
              $('.js-modal').fadeIn();
              return false;
-        });
+           });
             
          }));
     </script>
@@ -92,9 +90,21 @@
         <div class="row">
 
              <table>
-                <tr class="test"><td><a  href="">1</a></td><td><a  href="">aa</a></td><td><a  href="">１つ目</a></td></tr>
-                <tr class="test"><td><a  href="">2</a></td><td><a  href="">bb</a></td><td><a  href="">２つ目</a></td></tr>
-                <tr class="test"><td><a  href="">3</a></td><td><a  href="">cc</a></td><td><a  href="">３つ目</a></td></tr>
+                <tr class="test">
+                    <td><a  href="">1</a></td>
+                    <td><a  href="">aa</a></td>
+                    <td><a  href="">１つ目</a></td>
+                </tr>
+                <tr class="test">
+                    <td><a  href="">2</a></td>
+                    <td><a  href="">bb</a></td>
+                    <td><a  href="">２つ目</a></td>
+                </tr>
+                <tr class="test">
+                    <td><a  href="">3</a></td>
+                    <td><a  href="">cc</a></td>
+                    <td><a  href="">３つ目</a></td>
+                </tr>
              </table>
 
         </div>
